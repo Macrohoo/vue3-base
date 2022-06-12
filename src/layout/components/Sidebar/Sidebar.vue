@@ -56,26 +56,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
-import type { MenuProps } from "ant-design-vue";
-import { useAppStore } from "@/store/app";
-import Link from "./Link.vue";
-import path from "path";
-import { isExternal } from "@/utils/validate";
+import { defineComponent, ref, watch } from 'vue';
+import type { MenuProps } from 'ant-design-vue';
+import path from 'path';
+import { useAppStore } from '@/store/app';
+import Link from './Link.vue';
+import { isExternal } from '@/utils/validate';
 
 export default defineComponent({
   components: {
-    Link,
+    Link
   },
   setup() {
     const appStore = useAppStore();
-    //const route = useRoute()
+    // const route = useRoute()
 
-    const routes = computed(() => {
-      return appStore.routes;
-    });
+    const routes = computed(() => appStore.routes);
 
-    //二级子路由需要拼接path 例如：/noob-guide/account-login
+    // 二级子路由需要拼接path 例如：/noob-guide/account-login
     const resolvePath = (basePath: string, routePath: string) => {
       if (isExternal(routePath)) {
         return routePath;
@@ -87,18 +85,18 @@ export default defineComponent({
       return path.resolve(basePath, routePath);
     };
 
-    const openKeys = ref<string[]>(["sub1"]);
-    const selectedKeys = ref<string[]>(["1"]);
-    const handleClick: MenuProps["onClick"] = (e) => {
-      console.log("click", e);
+    const openKeys = ref<string[]>(['sub1']);
+    const selectedKeys = ref<string[]>(['1']);
+    const handleClick: MenuProps['onClick'] = e => {
+      console.log('click', e);
     };
     const titleClick = (e: Event) => {
-      console.log("titleClick", e);
+      console.log('titleClick', e);
     };
     watch(
       () => openKeys,
-      (val) => {
-        console.log("openKeys", val);
+      val => {
+        console.log('openKeys', val);
       }
     );
 
@@ -108,9 +106,9 @@ export default defineComponent({
       handleClick,
       titleClick,
       routes,
-      resolvePath,
+      resolvePath
     };
-  },
+  }
 });
 </script>
 

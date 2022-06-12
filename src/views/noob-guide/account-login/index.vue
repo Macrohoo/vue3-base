@@ -46,13 +46,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import ContentLayout from "@/components/ContentLayout.vue";
-import { message } from "ant-design-vue";
+import { defineComponent } from 'vue';
+import { message } from 'ant-design-vue';
+import ContentLayout from '@/components/ContentLayout.vue';
 
 export default defineComponent({
   components: {
-    ContentLayout,
+    ContentLayout
   },
   data() {
     return {
@@ -81,7 +81,7 @@ export default defineComponent({
           icon: 'message',
           title: '消息中心',
           message: '统一的通知管理中心'
-        },
+        }
       ],
       loginedFeat: [
         {
@@ -100,11 +100,11 @@ export default defineComponent({
           message: '专属交流社区，专注内容分享和效率提升'
         }
       ]
-    }
+    };
   },
   setup() {
     return {};
-  },
+  }
 });
 </script>
 

@@ -21,7 +21,7 @@ import 'virtual:svg-icons-register' //引入雪碧图注册脚本，到这里雪
 import svgIcon from '@/icons/SvgIcon.vue'
 app.component('SvgIcon', svgIcon)
 
-//antd-icon
+//antd-icon  //这里会极大变大打包文件
 import AntdIcon from '@/icons/AntdIcon.vue'
 app.component('AntdIcon', AntdIcon)
 
